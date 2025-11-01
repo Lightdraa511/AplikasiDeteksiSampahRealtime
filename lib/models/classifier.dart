@@ -163,8 +163,8 @@ class ClassificationResult {
   }
   String get confidencePercentage => '${(confidence * 100).toStringAsFixed(1)}%';
   
-  bool get isOrganic => label == 'O' || label.toLowerCase().contains('organik');
-  bool get isAnorganic => label == 'R' || label.toLowerCase().contains('anorganik') || label.toLowerCase().contains('recyclable');
+  bool get isOrganic => label.toLowerCase().trim() == 'organik';
+  bool get isAnorganic => label.toLowerCase().trim() == 'anorganik';
   
   @override
   String toString() {
